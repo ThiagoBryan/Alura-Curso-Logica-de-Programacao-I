@@ -1,0 +1,49 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+             document.write("<br>")
+    }
+    
+        function mostra(frase) {
+            document.write(frase)     
+            pulaLinha()
+        }
+
+mostra("A idade do Thiago é" + " 29 anos. ");
+pulaLinha()
+
+mostra("3 amigos Thiago, Alexandre e Valcleudis com idades de 29, 28, 30 ");
+mostra("A média das idades é: ");
+
+var idadeThiago = 29;
+var idadeAlexandre = 28;
+var idadeValcleudis = 30;
+var media = (idadeThiago + idadeAlexandre + idadeValcleudis)/3
+mostra(media + " anos."); 
+
+var soma1 = 29
+var soma2 = 28
+var soma3 = 30
+var soma = soma1 + soma2 + soma3  
+mostra("A soma das idades é:");
+mostra(soma + " anos.");
+
+
+var nome1 = "Thiago";
+var nome2 = "Alexandre";
+var nome3 = "Valcleudis";
+mostra("A idade de " + nome1 + " é " + idadeThiago);
+mostra("A idade de " + nome2 + " é " + idadeAlexandre);
+mostra("A idade de " + nome3 + " é " + idadeValcleudis);
+
+
+var ano = 2080;
+mostra(" Thiago tem " + (ano - 1992) + " anos");
+mostra(" Alexandre tem " + (ano - 1993) + " anos");
+mostra(" Valcleudis tem " + (ano - 1991) + " anos");
+  
+
+
+</script>
