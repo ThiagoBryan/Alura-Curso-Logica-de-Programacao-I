@@ -1,0 +1,65 @@
+<meta charset="UTF-8" />
+
+<input />
+<button>Compare com o meu segredo</button>
+
+<script>
+  function sorteia() {
+    return Math.round(Math.random() * 10);
+  }
+
+  function sorteiaNumeros(quantidade) {
+    var segredos = [];
+    var numero = 1; // para saber a quantidade de numeros para gerar
+     
+    // AQUI COMECA A LINHA PARA NAO REPETIR OS NUMEROS!!
+    while (numero <= quantidade) {
+      var numeroAleatorio = sorteia();
+
+      if (numeroAleatorio !== 0) { // PARA NAO TER O NUMERO 0!
+        var achou = false;
+
+        for (var posicao = 0; posicao < segredos.length; posicao++) {
+          if (segredos[posicao] == numeroAleatorio) {
+            achou = true;
+            break;
+          }
+        }
+        if ((achou == false)) {
+          segredos.push(numeroAleatorio);
+          numero++;
+        }
+      }
+    }
+    return segredos;
+  }
+
+  var segredos = sorteiaNumeros(5);
+  console.log(segredos)
+
+  //pode ser qualquer palavra
+  var input = document.querySelector("input");
+  input.focus();
+
+  function verifica() {
+    var achou = false;
+    // referente a posicao dos segredos 0, 1, 2, 3 ...
+    for (var posicao = 0; posicao < segredos.length; posicao++) {
+      if (input.value == segredos[posicao]) {
+        alert("Você acertou!");
+        achou = true;
+        break;
+      }
+    }
+    if (achou == false) {
+      alert("Você Errou!!");
+    }
+    // AQUI TERMINA A LINHA PARA NAO REPETIR NUMEROS!!
+    input.value = ""; // limpa a caixa
+    input.focus();
+  }
+
+  // tambem pode ser qualquer palavra
+  var button = document.querySelector("button");
+  button.onclick = verifica;
+</script>
